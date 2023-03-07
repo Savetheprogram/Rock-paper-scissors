@@ -1,11 +1,11 @@
 
  const prompt = require('prompt-sync')();
 
- let rock="rock"
-
- let paper="paper"
-
- let scissors="scissors"
+ const Plays = {
+     rock: "rock",
+     paper: "paper",
+     scissors: "scissors"
+ }
 
  playGame();
 
@@ -14,11 +14,11 @@
     function getComputerChoice(){
     let choice =Math.floor(Math.random()*3);
     if (choice===0) {
-        return rock
+        return Plays.rock
     } else if (choice===1){
-        return paper
+        return Plays.paper
     } else if (choice>=2) {
-        return scissors
+        return Plays.scissors
         }
     }
 
@@ -34,19 +34,19 @@ function chooseWinner() {
     const userChoice = getUserChoice()
     const computerChoice = getComputerChoice()
 
-    if ((userChoice === rock && computerChoice === rock) ||
-        (userChoice === paper && computerChoice === paper) ||
-        (userChoice===scissors && computerChoice === scissors))  {
+    if ((userChoice === Plays.rock && computerChoice === Plays.rock) ||
+        (userChoice === Plays.paper && computerChoice === Plays.paper) ||
+        (userChoice===Plays.scissors && computerChoice === Plays.scissors))  {
         return "It's a draw!"
 
-    } else if ( (userChoice === rock && computerChoice === paper) ||
-                (userChoice === paper && computerChoice === scissors) ||
-                (userChoice === scissors && computerChoice === rock)){
+    } else if ( (userChoice === Plays.rock && computerChoice === Plays.paper) ||
+                (userChoice === Plays.paper && computerChoice === Plays.scissors) ||
+                (userChoice === Plays.scissors && computerChoice === Plays.rock)){
         return "You lose :("
 
-    } else if ( (userChoice === rock && computerChoice === scissors) ||
-                (userChoice === paper && computerChoice === rock) ||
-                (userChoice === scissors && computerChoice === paper))
+    } else if ( (userChoice === Plays.rock && computerChoice === Plays.scissors) ||
+                (userChoice === Plays.paper && computerChoice === Plays.rock) ||
+                (userChoice === Plays.scissors && computerChoice === Plays.paper))
         return "You win! :)"
 
 }
