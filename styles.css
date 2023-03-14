@@ -1,0 +1,49 @@
+.pageName {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+* {
+    border: 1px solid red;
+}
+.middlePanel {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+}
+.rightPanel,
+.leftPanel {
+    width: 500px;
+    background-color: lightblue;
+}
+.figurePictures {
+    display: flex;
+    justify-content: space-around;
+}
+
+.picture {
+    width: 150px;
+    height: 150px;
+}
+
+.playableButtons {
+    display: flex;
+    justify-content: space-around;
+    margin-right: -10px;
+}
+.welcome {
+    width: 300px;
+}
+.introductionText {
+    display: flex;
+    flex-direction: column;
+}
+.introductionText h3,
+.introductionText p
+{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
