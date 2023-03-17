@@ -1,87 +1,92 @@
-const prompt = require("prompt-sync")();
+// @ts-ignore
+type Figures = "rock" | "paper" | "scissors"
+const PlaysArr: Figures[] = ["rock", "paper", "scissors"];
 
-const Plays = {
+const Plays: { [key: string]: Figures } = {
   rock: "rock",
   paper: "paper",
   scissors: "scissors"
 };
 
-playGame();
+
+const rockPlayButton = document.querySelector("#rockPlay");
+const paperPlayButton = document.querySelector("#paperPlay");
+const scissorsPlayButton = document.querySelector("#scissorsPlay");
+// rockPlayButton.addEventListener("click", getUserChoice(Plays.rock));
+// @ts-ignore
+rockPlayButton.addEventListener("click", () => playGame(Plays.rock));
+// @ts-ignore
+paperPlayButton.addEventListener("click", () => playGame(Plays.paper));
+// @ts-ignore
+scissorsPlayButton.addEventListener("click", () => playGame(Plays.scissors));
 
 
-function getComputerChoice() {
+function getComputerChoice(): Figures {
   let choice = Math.floor(Math.random() * 3);
-  if (choice === 0) {
-    return Plays.rock;
-  } else if (choice === 1) {
-    return Plays.paper;
-  } else if (choice >= 2) {
-    return Plays.scissors;
-  }
+  return PlaysArr[choice];
 }
 
 
-function getUserChoice() {
-  let userInput = prompt("Pick rock, paper or scissors ");
-  return userInput.toLowerCase();
-}
-
-
-function chooseWinner() {
-  const userChoice = getUserChoice();
+function chooseWinner(userChoice: Figures) {
+  // const userChoice = getUserChoice();
+  // console.log("dskjfhdsfdsh" + userChoice);
   const computerChoice = getComputerChoice();
-
+  // console.log(userChoice);
+  // console.log(computerChoice);
   if (userChoice === computerChoice) {
     return "It's a draw!";
-
   }
+
   if ((userChoice === Plays.rock && computerChoice === Plays.paper) ||
     (userChoice === Plays.paper && computerChoice === Plays.scissors) ||
     (userChoice === Plays.scissors && computerChoice === Plays.rock)) {
     return "You lose :(";
   }
-  if ((userChoice === Plays.rock && computerChoice === Plays.scissors) ||
-    (userChoice === Plays.paper && computerChoice === Plays.rock) ||
-    (userChoice === Plays.scissors && computerChoice === Plays.paper))
-    return "You win! :)";
+
+  return "You win! :)";
 
 }
 
-function playGame() {
+let userScore = 0;
+let computerScore = 0;
+let round = 0;
+
+function playGame(figure: Figures) {
 
 
-  let userScore = 0;
-  let computerScore = 0;
-  const rounds = prompt("How many rounds you wanna play? ");
+  const roundsDEBUG = 1;
+  // @ts-ignore
+  const rounds = parseInt(roundsDEBUG);
+  round += 1;
 
-  for (let i = 1; i <= (rounds); i++) {
-    console.log("Round:" + i);
-    const winner = chooseWinner();
+  const winner = chooseWinner(figure);
 
-    if (winner === "You lose :(") {
+  if (winner === "You lose :(") {
 
-      computerScore = computerScore + 1;
-      console.log("point for computer");
+    computerScore = computerScore + 1;
+    console.log("point for computer");
 
-    } else if (winner === "You win! :)") {
+  } else if (winner === "You win! :)") {
 
-      userScore = userScore + 1;
-      console.log("point for player!");
+    userScore = userScore + 1;
+    console.log("point for player!");
 
-    } else if (winner === "It's a draw!") {
+  } else if (winner === "It's a draw!") {
 
-      console.log("Draw");
+    console.log("Draw");
 
-
-    }
-
-    console.log("userScore: " + userScore);
-    console.log("computerScore:" + computerScore);
-  }
-  if (userScore > computerScore) {
-    console.log("Congratulations! You win!");
-  } else {
-    console.log("Im sorry, You lose :(");
 
   }
+  console.log("round:" + round);
+  console.log("userScore: " + userScore);
+  console.log("computerScore:" + computerScore);
+
+  // if (userScore == computerScore) {
+  //   console.log("DRAW");
+  // } else if (userScore > computerScore) {
+  //   console.log("Congratulations!! You win!");
+  // } else {
+  //   console.log("Im sorry, You lose :(");
+  //
+  // }
 }
