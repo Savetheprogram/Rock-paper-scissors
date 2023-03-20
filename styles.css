@@ -1,6 +1,6 @@
 html,
 body {
-    margin: 0px;
+
     height: 100%;
 }
 
@@ -14,20 +14,19 @@ body {
 
 
 }
-* {
-    border: 1px solid red;
-}
+
 .middlePanel {
-    background-color: #deffff;
+    background-color: rgba(127, 255, 0, 0.38);
     display: flex;
     flex: 1;
     flex-direction: column;
+    border: solid black 1px;
 
 }
 .rightPanel,
 .leftPanel {
     width: 500px;
-    background-color: lightblue;
+    background-color:  #ffff99;
     height: 100%;
 }
 .figurePictures {
@@ -35,9 +34,10 @@ body {
     justify-content: space-around;
 }
 
-.picture {
+img {
     width: 150px;
     height: 150px;
+    border: solid black 1px
 }
 
 .playableButtons {
@@ -46,8 +46,8 @@ body {
     margin-right: -10px;
     margin-top: 10px;
 }
-.welcome {
-    width: 300px;
+.welcomeText {
+    margin: 10px;
 }
 .introductionText {
     display: flex;
@@ -64,4 +64,40 @@ button {
     border-radius: 5px;
     background-color: ;
     border: 1px solid black;
+}
+.winMessage,
+.score {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    margin: 5px
+}
+.score {
+    align-content: space-around;
+
+}
+.extraInfo {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.computerScore,
+.playerScore{
+    margin: 5px;
+    font-size: larger;
+}
+.winMessage {
+    font-size: larger;
+}
+button:hover {
+    background: aqua;
+}
+button:active {
+    background: blueviolet;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }

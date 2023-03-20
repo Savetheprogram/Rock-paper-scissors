@@ -1,52 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="styles.css">
 
 </head>
 <body class="pageName">
-    <div class="leftPanel">
-    <p>Whatever</p>
+<div class="leftPanel">
+</div>
+<div class="middlePanel">
+  <div class="introductionText">
+    <h3>Hello wonderful people</h3>
+    <div class="welcomeText">
+      <p>
+        I would like to invite you to play this simple game I created myself.
+        It's a very typical rock paper scissors game, so there is no explanation of rules needed.
+        To play the game choose what you want to play and press the corresponding button to play that figure. Press
+        the button and hope for the best!
+      </p>
     </div>
-    <div class="middlePanel">
-        <div class="introductionText">
-            <h3>Hello wonderful people</h3>
-            <p class="welcome">
-                I would like to invite you to play this simple game I created myself.
-            It's a very typical rock paper scissors game, so there is no explanation of rules needed.
-            To play the game choose what you want to play and press the corresponding button to play that figure. Press
-            the button and hope for the best!
-            </p>
-            <p>Good luck!</p>
-        </div>
-        <div class="figurePictures">
-            <div class="picture"></div>
-            <div class="picture"></div>
-            <div class="picture"></div>
-        </div>
-        <div class="playableButtons">
-            <button>Play as rock</button>
-            <button>Play as paper</button>
-            <button>Play as scissors</button>
-        </div>
-        <div class="score">
+    <p>Good luck!</p>
+  </div>
+  <div class="figurePictures">
 
-        </div>
-        <div class="extraInfo">
+    <img src="images/stone.jpg" alt="stone picture">
 
-        </div>
+    <img src="images/paper.jpg" alt="paper picture">
+
+    <img src="images/scissors.jpg" alt="scissors picture">
+  </div>
+  <div class="playableButtons">
+    <button id="rockPlay">Play as rock</button>
+    <button id="paperPlay">Play as paper</button>
+    <button id="scissorsPlay">Play as scissors</button>
+  </div>
+  <div class="extraInfo">
+    <div class="score">
+      <div class="computerScore"></div>
+      <div class="playerScore"></div>
     </div>
-    <div class="rightPanel">
-        <p>Whatever</p>
+    <div class="winMessage">
     </div>
+  </div>
+</div>
+<div class="rightPanel">
+</div>
 </body>
 </html>
 
-
+<script src="script.js"></script>
 
 
